@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AI游戏热门排行榜 · 周榜 / 月榜</title>
+  <meta name="description" content="AI 小游戏热门排行榜：周榜与月榜，基于公开案例与品类热度整理，每周更新。" />
+  <link rel="stylesheet" href="./styles.css" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E🎮%3C/text%3E%3C/svg%3E" />
+  <meta name="theme-color" content="#7C5CFF" />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="AI游戏热门排行榜 · 周榜 / 月榜" />
+  <meta property="og:description" content="AI 小游戏热门排行榜：周榜与月榜，基于公开案例与品类热度整理。" />
+  <meta property="og:locale" content="zh_CN" />
+  <meta property="og:site_name" content="AI小游戏导航" />
+  <meta property="og:url" content="https://6a4b49241a014301adb7f304dcb2097b.sh4.agentos-app.net/ranking.html" />
+  <link rel="canonical" href="https://6a4b49241a014301adb7f304dcb2097b.sh4.agentos-app.net/ranking.html" />
+</head>
+<body>
+  <!-- 顶部导航 -->
+  <header class="nav" id="top">
+    <div class="nav-inner">
+      <a class="brand" href="index.html">
+        <span class="brand-mark">🎮</span>
+        <span>AI小游戏导航</span>
+      </a>
+      <nav class="nav-links">
+        <a href="index.html#start">入门引导</a>
+        <a href="index.html#tools">工具库</a>
+        <a href="index.html#cases">案例库</a>
+        <a href="index.html#weekly">本周新增</a>
+        <a href="index.html#guide">入局指南</a>
+      </nav>
+      <button class="nav-toggle" aria-label="打开菜单" aria-expanded="false">☰</button>
+      <a class="nav-cta" href="index.html#start">返回首页</a>
+    </div>
+  </header>
+
+  <!-- 头部 -->
+  <section class="hero rank-hero">
+    <div class="hero-inner" style="grid-template-columns:1fr;">
+      <div class="hero-text" style="max-width:760px;margin:0 auto;text-align:center;">
+        <span class="badge-new">🔥 HOT RANKING</span>
+        <h1>AI 游戏<span class="hl">热门排行榜</span></h1>
+        <p class="hero-sub" style="margin:14px auto 0;">
+          周榜看当下最火，月榜看长线沉淀。基于公开案例与品类热度整理，每周更新。
+        </p>
+        <div class="rank-toggle">
+          <button class="rtab active" data-tab="week">📅 本周榜</button>
+          <button class="rtab" data-tab="month">📆 本月榜</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 排行榜 -->
+  <section class="section" id="rank">
+    <div class="rank-list" id="rank-list"></div>
+    <p class="rank-note">⚠️ 示例榜单：数据基于公开案例与品类热度整理，用于展示形态。真实数据请接入微信/抖音小游戏官方榜单 API，并在 <code>ranking.html</code> 的 <code>RANK_DATA</code> 中更新。</p>
+  </section>
+
+  <!-- 页脚 -->
+  <footer class="footer">
+    <div class="footer-inner">
+      <div>
+        <b>🎮 AI小游戏导航站</b>
+        <p>面向所有人的 AI 小游戏聚合导航。数据来自公开行业报告与平台披露，仅供参考，不构成投资建议。</p>
+      </div>
+      <div class="footer-links">
+        <a href="index.html#start">入门引导</a>
+        <a href="index.html#tools">工具库</a>
+        <a href="index.html#cases">案例库</a>
+        <a href="index.html#weekly">本周新增</a>
+        <a href="index.html#guide">入局指南</a>
+      </div>
+    </div>
+    <div class="footer-bar">© 2026 AI小游戏导航站 · 纯静态开源导航，可自由 fork 与二次创作。</div>
+  </footer>
+
+  <script>
+  /* 排行榜数据（示例，可替换为真实榜单） */
+  const RANK_DATA = {
+    week: [
+      { name:"《脑洞怪物大乱斗》", type:"休闲合成", platform:"SOON", note:"9 天获 2.5 万用户，已盈利", score:98 },
+      { name:"《别崩人设啊》", type:"AI漫剧", platform:"抖音", note:"峰值 TOP2，互动剧情爆款", score:95 },
+      { name:"《超自然行动组》", type:"AI NPC", platform:"233乐园", note:"AI 对话成核心玩法，社区热门", score:92 },
+      { name:"《Suck Up!》", type:"AI NPC", platform:"海外", note:"YouTube 过亿播放，零投放裂变", score:90 },
+      { name:"《AI成语消除》", type:"休闲", platform:"独立开发者", note:"3 天做出，月入 4.1 万", score:86 },
+      { name:"《明月宫心》", type:"AI全要素", platform:"三七互娱", note:"10 天 AI 全要素，两代迭代", score:83 },
+      { name:"《大厂模拟器》", type:"零代码", platform:"个人开发者", note:"首日 5 万 PV，已盈利", score:80 },
+      { name:"《数字景德镇·瓷都小匠》", type:"文旅经营", platform:"代号Craft", note:"腾讯首曝瓷业经营小游戏", score:76 },
+      { name:"《中华食肆》", type:"经营", platform:"学生独立", note:"大三学生 200h，903 素材", score:72 },
+      { name:"《偷吃大赛》", type:"休闲", platform:"233工坊", note:"社区热门，低门槛上手", score:68 }
+    ],
+    month: [
+      { name:"《超自然行动组》", type:"AI NPC", platform:"233乐园", note:"长居热门，验证 AI NPC 玩法骨架", score:97 },
+      { name:"《脑洞怪物大乱斗》", type:"休闲合成", platform:"SOON", note:"月级稳定盈利代表", score:94 },
+      { name:"《Suck Up!》", type:"AI NPC", platform:"海外", note:"长线内容裂变，持续出圈", score:91 },
+      { name:"《明月宫心》", type:"AI全要素", platform:"三七互娱", note:"大厂 AI 试错标杆", score:88 },
+      { name:"《AI成语消除》", type:"休闲", platform:"独立开发者", note:"极致低成本跑通广告变现", score:85 },
+      { name:"《别崩人设啊》", type:"AI漫剧", platform:"抖音", note:"曾 TOP2，需迭代对抗衰退", score:82 },
+      { name:"《中华食肆》", type:"经营", platform:"学生独立", note:"一人 200 小时，发行商接洽", score:78 },
+      { name:"《大厂模拟器》", type:"零代码", platform:"个人开发者", note:"零预算高流量样本", score:75 },
+      { name:"《数字景德镇·瓷都小匠》", type:"文旅经营", platform:"代号Craft", note:"文旅+AI 新品类探索", score:71 },
+      { name:"《爱豆模拟器》", type:"养成", platform:"233工坊", note:"社区养成向持续产出", score:67 }
+    ]
+  };
+
+  const listEl = document.getElementById("rank-list");
+  function medal(n){ return n===1?"🥇":n===2?"🥈":n===3?"🥉":`<span class="rnum">${n}</span>`; }
+  function renderRank(tab){
+    const data = RANK_DATA[tab];
+    listEl.innerHTML = data.map((r,i) => `
+      <div class="rank-row${i<3?" top":""}">
+        <div class="r-rank">${medal(i+1)}</div>
+        <div class="r-main">
+          <div class="r-name">${r.name} <span class="r-tag">${r.type}</span></div>
+          <div class="r-sub">平台：${r.platform} · ${r.note}</div>
+          <div class="r-bar"><i style="width:${r.score}%"></i></div>
+        </div>
+        <div class="r-score">${r.score}<small>热度</small></div>
+      </div>`).join("");
+  }
+  document.querySelectorAll(".rtab").forEach(b => {
+    b.addEventListener("click", () => {
+      document.querySelectorAll(".rtab").forEach(x => x.classList.remove("active"));
+      b.classList.add("active");
+      renderRank(b.dataset.tab);
+    });
+  });
+  renderRank("week");
+  </script>
+  <script src="./nav.js"></script>
+  <!-- 免费隐私友好统计：去 https://www.goatcounter.com 注册，把 YOUR-CODE 换成你的站点代码即可生效（无需 cookie） -->
+  <script data-goatcounter="https://YOUR-CODE.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+</body>
+</html>
