@@ -35,7 +35,7 @@ python -m http.server 8080
 > 前置条件（任选其一）：
 > - **A. 装了 `gh` 并登录**：终端跑 `gh auth login` 完成授权；或
 > - **B. 有 Personal Access Token（PAT）**：GitHub → Settings → Developer settings → PAT → 生成带 `repo` 权限的 token；或
-> - **C. 连 WorkBuddy GitHub 连接器**：左侧栏 → 连接器 → GitHub → 连接（连上后可直接让我从这台机器帮你推）。
+> - **C. 连 WorkBuddy GitHub 连接器**：左侧栏 → 连接器 → GitHub → 连接（仅用于本机 `gh` 授权；本沙箱 agent 无直接推送能力，最终仍需在本机终端执行下方命令）。
 
 **方式一：用 gh 一键建仓并推送（推荐，需 A）**
 ```bash
