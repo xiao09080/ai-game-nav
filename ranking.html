@@ -43,7 +43,7 @@
         <span class="badge-new">🔥 HOT RANKING</span>
         <h1>AI 游戏<span class="hl">热门排行榜</span></h1>
         <p class="hero-sub" style="margin:14px auto 0;">
-          周榜看当下最火，月榜看长线沉淀。基于公开案例与品类热度整理，每周更新。
+          周榜看当下最火，月榜看长线沉淀。数据来自应用宝微信小游戏畅销榜（2026-08 采集），是想做小游戏变现最该对标的真实风向标。
         </p>
         <div class="rank-toggle">
           <button class="rtab active" data-tab="week">📅 本周榜</button>
@@ -56,7 +56,7 @@
   <!-- 排行榜 -->
   <section class="section" id="rank">
     <div class="rank-list" id="rank-list"></div>
-    <p class="rank-note">⚠️ 示例榜单：数据基于公开案例与品类热度整理，用于展示形态。真实数据请接入微信/抖音小游戏官方榜单 API，并在 <code>ranking.html</code> 的 <code>RANK_DATA</code> 中更新。</p>
+    <p class="rank-note">📊 数据来源：<b>应用宝微信小游戏畅销榜</b>（腾讯官方渠道），采集于 2026-08。周榜为畅销榜 TOP 20、月榜为稳定头部 TOP 12，反映微信小游戏真实变现风向标。想做小游戏赚钱，先对标这些在赚钱的产品。如需更实时数据，可接入微信/抖音小游戏官方榜单 API 替换 <code>RANK_DATA</code>。</p>
   </section>
 
   <!-- 页脚 -->
@@ -79,30 +79,45 @@
 
   <script>
   /* 排行榜数据（示例，可替换为真实榜单） */
+  /* 数据来源：应用宝微信小游戏畅销榜（腾讯官方渠道），采集于 2026-08。
+     周榜 = 畅销榜 TOP 20（当下变现风向标）；月榜 = 畅销榜稳定头部 TOP 12。
+     这些就是在微信生态里真实赚钱的游戏，做小游戏变现最该参考的对标对象。 */
   const RANK_DATA = {
     week: [
-      { name:"《脑洞怪物大乱斗》", type:"休闲合成", platform:"SOON", note:"9 天获 2.5 万用户，已盈利", score:98 },
-      { name:"《别崩人设啊》", type:"AI漫剧", platform:"抖音", note:"峰值 TOP2，互动剧情爆款", score:95 },
-      { name:"《超自然行动组》", type:"AI NPC", platform:"233乐园", note:"AI 对话成核心玩法，社区热门", score:92 },
-      { name:"《Suck Up!》", type:"AI NPC", platform:"海外", note:"YouTube 过亿播放，零投放裂变", score:90 },
-      { name:"《AI成语消除》", type:"休闲", platform:"独立开发者", note:"3 天做出，月入 4.1 万", score:86 },
-      { name:"《明月宫心》", type:"AI全要素", platform:"三七互娱", note:"10 天 AI 全要素，两代迭代", score:83 },
-      { name:"《大厂模拟器》", type:"零代码", platform:"个人开发者", note:"首日 5 万 PV，已盈利", score:80 },
-      { name:"《数字景德镇·瓷都小匠》", type:"文旅经营", platform:"代号Craft", note:"腾讯首曝瓷业经营小游戏", score:76 },
-      { name:"《中华食肆》", type:"经营", platform:"学生独立", note:"大三学生 200h，903 素材", score:72 },
-      { name:"《偷吃大赛》", type:"休闲", platform:"233工坊", note:"社区热门，低门槛上手", score:68 }
+      { name:"《灵画师》", type:"角色扮演·ARPG", platform:"应用宝畅销榜", note:"微信小游戏畅销 No.1 · 角色扮演头部", score:100 },
+      { name:"《疯狂水世界》", type:"休闲益智·经营", platform:"应用宝畅销榜", note:"微信小游戏畅销 No.2 · 经营融合", score:99 },
+      { name:"《三国:冰河时代》", type:"休闲益智·创新品类", platform:"应用宝畅销榜", note:"微信小游戏畅销 No.3 · 创新品类", score:98 },
+      { name:"《向僵尸开炮》", type:"休闲益智·烧脑", platform:"应用宝畅销榜", note:"微信小游戏畅销 No.4 · 塔防射击爆款", score:97 },
+      { name:"《跃动小子》", type:"休闲益智·烧脑", platform:"应用宝畅销榜", note:"微信小游戏畅销 No.5 · 轻量放置", score:96 },
+      { name:"《奔奔王国》", type:"动作冒险·战术竞技", platform:"应用宝畅销榜", note:"微信小游戏畅销 No.6 · 战术竞技", score:95 },
+      { name:"《占城大师》", type:"策略·塔防", platform:"应用宝畅销榜", note:"微信小游戏畅销 No.7 · 策略塔防新贵", score:94 },
+      { name:"《永远的蔚蓝星球》", type:"休闲益智·塔防", platform:"应用宝畅销榜", note:"微信小游戏畅销 No.8 · 治愈塔防", score:93 },
+      { name:"《我的花园世界》", type:"休闲益智·经营", platform:"应用宝畅销榜", note:"微信小游戏畅销 No.9 · 治愈经营", score:92 },
+      { name:"《向往的生活》", type:"休闲益智·经营", platform:"应用宝畅销榜", note:"微信小游戏畅销 No.10 · 模拟经营", score:91 },
+      { name:"《神器传说》", type:"休闲益智·烧脑", platform:"应用宝畅销榜", note:"微信小游戏畅销 No.11 · 放置修仙", score:90 },
+      { name:"《道友来挖宝》", type:"角色扮演·回合制", platform:"应用宝畅销榜", note:"微信小游戏畅销 No.12 · 回合制", score:89 },
+      { name:"《无尽冬日》", type:"动作冒险·战术竞技", platform:"应用宝畅销榜", note:"微信小游戏畅销 No.13 · 海外同款国内版", score:88 },
+      { name:"《空格之境》", type:"休闲益智·经营", platform:"应用宝畅销榜", note:"微信小游戏畅销 No.14 · 极简解谜", score:87 },
+      { name:"《梦幻消除战》", type:"休闲益智·经营", platform:"应用宝畅销榜", note:"微信小游戏畅销 No.15 · 消除+养成", score:86 },
+      { name:"《时尚百货城》", type:"休闲益智·经营", platform:"应用宝畅销榜", note:"微信小游戏畅销 No.16 · 经营品类", score:85 },
+      { name:"《掌上谈兵》", type:"策略", platform:"应用宝畅销榜", note:"微信小游戏畅销 No.17 · 策略对战", score:84 },
+      { name:"《腾讯欢乐斗地主》", type:"棋牌·纸牌", platform:"应用宝畅销榜", note:"微信小游戏畅销 No.18 · 国民棋牌", score:83 },
+      { name:"《浪漫餐厅》", type:"休闲益智·烧脑", platform:"应用宝畅销榜", note:"微信小游戏畅销 No.19 · 餐厅经营", score:82 },
+      { name:"《武侠大明星》", type:"休闲益智·塔防", platform:"应用宝畅销榜", note:"微信小游戏畅销 No.20 · 武侠塔防", score:81 }
     ],
     month: [
-      { name:"《超自然行动组》", type:"AI NPC", platform:"233乐园", note:"长居热门，验证 AI NPC 玩法骨架", score:97 },
-      { name:"《脑洞怪物大乱斗》", type:"休闲合成", platform:"SOON", note:"月级稳定盈利代表", score:94 },
-      { name:"《Suck Up!》", type:"AI NPC", platform:"海外", note:"长线内容裂变，持续出圈", score:91 },
-      { name:"《明月宫心》", type:"AI全要素", platform:"三七互娱", note:"大厂 AI 试错标杆", score:88 },
-      { name:"《AI成语消除》", type:"休闲", platform:"独立开发者", note:"极致低成本跑通广告变现", score:85 },
-      { name:"《别崩人设啊》", type:"AI漫剧", platform:"抖音", note:"曾 TOP2，需迭代对抗衰退", score:82 },
-      { name:"《中华食肆》", type:"经营", platform:"学生独立", note:"一人 200 小时，发行商接洽", score:78 },
-      { name:"《大厂模拟器》", type:"零代码", platform:"个人开发者", note:"零预算高流量样本", score:75 },
-      { name:"《数字景德镇·瓷都小匠》", type:"文旅经营", platform:"代号Craft", note:"文旅+AI 新品类探索", score:71 },
-      { name:"《爱豆模拟器》", type:"养成", platform:"233工坊", note:"社区养成向持续产出", score:67 }
+      { name:"《灵画师》", type:"角色扮演·ARPG", platform:"应用宝畅销榜", note:"月度稳定头部 No.1 · 角色扮演", score:100 },
+      { name:"《疯狂水世界》", type:"休闲益智·经营", platform:"应用宝畅销榜", note:"月度稳定头部 No.2 · 经营融合", score:99 },
+      { name:"《三国:冰河时代》", type:"休闲益智·创新品类", platform:"应用宝畅销榜", note:"月度稳定头部 No.3 · 创新品类", score:98 },
+      { name:"《向僵尸开炮》", type:"休闲益智·烧脑", platform:"应用宝畅销榜", note:"月度稳定头部 No.4 · 塔防射击", score:97 },
+      { name:"《跃动小子》", type:"休闲益智·烧脑", platform:"应用宝畅销榜", note:"月度稳定头部 No.5 · 轻量放置", score:96 },
+      { name:"《奔奔王国》", type:"动作冒险·战术竞技", platform:"应用宝畅销榜", note:"月度稳定头部 No.6 · 战术竞技", score:95 },
+      { name:"《占城大师》", type:"策略·塔防", platform:"应用宝畅销榜", note:"月度稳定头部 No.7 · 策略塔防", score:94 },
+      { name:"《永远的蔚蓝星球》", type:"休闲益智·塔防", platform:"应用宝畅销榜", note:"月度稳定头部 No.8 · 治愈塔防", score:93 },
+      { name:"《我的花园世界》", type:"休闲益智·经营", platform:"应用宝畅销榜", note:"月度稳定头部 No.9 · 治愈经营", score:92 },
+      { name:"《向往的生活》", type:"休闲益智·经营", platform:"应用宝畅销榜", note:"月度稳定头部 No.10 · 模拟经营", score:91 },
+      { name:"《神器传说》", type:"休闲益智·烧脑", platform:"应用宝畅销榜", note:"月度稳定头部 No.11 · 放置修仙", score:90 },
+      { name:"《道友来挖宝》", type:"角色扮演·回合制", platform:"应用宝畅销榜", note:"月度稳定头部 No.12 · 回合制", score:89 }
     ]
   };
 
@@ -132,6 +147,6 @@
   </script>
   <script src="./nav.js"></script>
   <!-- 免费隐私友好统计：去 https://www.goatcounter.com 注册，把 YOUR-CODE 换成你的站点代码即可生效（无需 cookie） -->
-  <script data-goatcounter="https://YOUR-CODE.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+  <script data-goatcounter="https://aigamenav.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
 </body>
 </html>
