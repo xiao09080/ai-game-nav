@@ -13,8 +13,8 @@
   <meta property="og:description" content="面向所有人（大学生、失业者、创业者、宝妈、爱好者）的 AI 小游戏导航：入门引导、工具平台、变现案例、市场数据、技能商店、导航站聚合与热门排行榜。" />
   <meta property="og:locale" content="zh_CN" />
   <meta property="og:site_name" content="AI小游戏导航" />
-  <meta property="og:url" content="https://6a4b49241a014301adb7f304dcb2097b.sh4.agentos-app.net/" />
-  <link rel="canonical" href="https://6a4b49241a014301adb7f304dcb2097b.sh4.agentos-app.net/" />
+  <meta property="og:url" content="https://xiao09080.github.io/ai-game-nav/" />
+  <link rel="canonical" href="https://xiao09080.github.io/ai-game-nav/" />
 </head>
 <body>
   <!-- 漂浮装饰 -->
@@ -462,7 +462,7 @@
       </div>
       <div class="c-actions">
         <button class="btn-wechat" onclick="copyWx()">复制微信号</button>
-        <span class="wx-hint">微信号：<b id="wxid">YOUR_WECHAT_ID</b></span>
+        <span class="wx-hint">微信号：<b id="wxid">ajingis888</b></span>
       </div>
     </div>
   </section>
@@ -499,7 +499,7 @@
     function copyWx() {
       var id = (document.getElementById('wxid') || {}).textContent || '';
       id = id.trim();
-      if (!id || id === 'YOUR_WECHAT_ID') { alert('请先在源码里把 wxid 替换成你的微信号'); return; }
+      if (!id) { alert('请先在源码里把 wxid 替换成你的微信号'); return; }
       if (navigator.clipboard) navigator.clipboard.writeText(id);
       var btn = document.querySelector('.btn-wechat');
       var old = btn.textContent; btn.textContent = '已复制 ✓'; setTimeout(function(){ btn.textContent = old; }, 1500);

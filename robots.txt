@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://6a4b49241a014301adb7f304dcb2097b.sh4.agentos-app.net/sitemap.xml
+Sitemap: https://xiao09080.github.io/ai-game-nav/sitemap.xml

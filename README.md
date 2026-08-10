@@ -68,5 +68,14 @@ git push -u origin main
 
 站点已预留 **GoatCounter** 隐私统计脚本（无 cookie、合规、免费）。去 https://www.goatcounter.com 注册，拿到你的站点代码后，把 `index.html` / `ranking.html` 里的 `YOUR-CODE` 替换掉即可生效；不替换也不会影响站点运行。
 
+## 部署到腾讯云 CloudBase 静态托管（国内加速、免费额度）
+
+站点已部署到 CloudBase 静态托管（环境 `ai-game-nav-d5gu9ecs153b9d27b`，体验版免费额度：1GB 存储 + 5GB/月流量）。
+
+- **访问地址**：https://ai-game-nav-d5gu9ecs153b9d27b-1309193005.tcloudbaseapp.com/
+- **更新方式**：改完本地文件后，用 CloudBase MCP 工具 `manageHosting(action=upload)` 重新上传变更文件即可（首页文档已设为 `index.html`）。
+
+> 当前以 GitHub Pages 为主站（sitemap.xml / og:url 均指向 GitHub Pages 地址），CloudBase 作为国内加速镜像。如需切换 CloudBase 为主站，把 sitemap.xml / og:url 改回 CloudBase 地址后重新上传即可。
+
 ## 数据说明
 站点数据来自公开行业报告与平台披露（2026-08 整理），仅供学习与参考，不构成投资建议。如发现数据过期或工具下架，欢迎提 Issue / PR 修正。
